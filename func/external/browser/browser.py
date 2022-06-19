@@ -1,6 +1,10 @@
 import webbrowser
 from pyowm import OWM
 import assistant.assistant_speeching as bs
+import configparser
+
+config = configparser.RawConfigParser()
+config.read('Config.properties', 'weather')
 
 def search_for_google(*args: tuple):
     if not args[0]: return
@@ -19,7 +23,7 @@ def search_for_video_on_youtube(*args: tuple):
     webbrowser.get().open(url)
     
 def weather(*args: tuple):
-    owm = OWM('51c36b1c38b06959eb863e7cb29844f7')
+    owm = OWM(config.get('token'))
     mgr = owm.weather_manager()
     weather = mgr.weather_at_place('Novosibirsk, RU').weather  # get the weather at London,GB now
     

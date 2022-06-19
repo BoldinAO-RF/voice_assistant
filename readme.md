@@ -22,3 +22,4 @@
 ## pip install winshell
 ## pip install termcolor2
 ## pip install pypiwin32
+## pip install configparser
