@@ -3,7 +3,7 @@ from gtts import gTTS # преобразование текста в речь
 import playsound # проигрывание музыки
 
 
-path = "./bot/voice/"
+path = "./assistant/voice/"
 
 file_voice_listen = path+"listen.mp3"
 file_voice_nothingsay = path+"nothingsay.mp3"
@@ -17,7 +17,6 @@ list_of_voices = {
 }
 
 hello = False
-
 
 for voice_path in list_of_voices.keys():
     if not os.path.exists(voice_path):
